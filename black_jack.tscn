@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy0oa44bocali"]
+
+[ext_resource type="Script" path="res://black_jack.cs" id="1_axu28"]
+[ext_resource type="Texture2D" uid="uid://ciiwx6338inl0" path="res://images/table.jpg" id="2_ytmsk"]
+
+[node name="blackJack" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.966
+offset_bottom = 28.032
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axu28")
+
+[node name="table" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1903.0
+offset_bottom = 1205.0
+texture = ExtResource("2_ytmsk")
+
+[node name="dealerTotal" type="Label" parent="."]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 28.0
+offset_right = 1076.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 40
+text = "Dealer Total: 00
+"
+
+[node name="playerTotal" type="Label" parent="."]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 1110.0
+offset_right = 1100.0
+offset_bottom = 1165.0
+theme_override_font_sizes/font_size = 40
+text = "Player total: 00"
+
+[node name="finalResult" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 146.0
+offset_right = 1626.0
+offset_bottom = 270.0
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+
+[node name="hitBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 1069.0
+offset_right = 342.0
+offset_bottom = 1117.0
+theme_override_font_sizes/font_size = 25
+text = "Hit
+"
+
+[node name="standBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 1064.0
+offset_right = 1724.0
+offset_bottom = 1112.0
+theme_override_font_sizes/font_size = 25
+text = "Stand"
+
+[node name="restartBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1717.0
+offset_top = 37.0
+offset_right = 1840.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 25
+text = "restart"
+
+[connection signal="pressed" from="hitBtn" to="." method="_on_hit_btn_pressed"]
+[connection signal="pressed" from="restartBtn" to="." method="_on_restart_btn_pressed"]
